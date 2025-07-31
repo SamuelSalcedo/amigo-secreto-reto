@@ -12,12 +12,11 @@
 // id:" resultado
 //Funcion que valida el input
 let listadoAmigos = [];
-let listado = document.querySelector('listaAmigos');
 let input ="";
+let listadoHTML = document.getElementById('listaAmigos');
 
 function validarInput(){
     input = document.getElementById('amigo').value;
-
     if(input == ""){
         alert("Por favor, inserte un nombre.");
         return false
@@ -30,8 +29,26 @@ function validarInput(){
 function limpiarInput(){
     document.querySelector('#amigo').value = "";
 }
+
+
 function agregarAmigo(){
-    validarInput();
+    //si no esta vacio agrega a la lista el amigo
+    if(validarInput()){
+        listadoAmigos.push(input);
+        limpiarInput();
+        agregarListado(listadoAmigos)
+        console.log(listadoAmigos)
+    }else{
+        limpiarInput();
+    }
+}
+
+function agregarListado(amigos = []){
+    listadoHTML.innerHTML = ""
+    for(var i =0;i<amigos.length;i++){
+        listadoHTML.innerHTML += `<li>${amigos[i]}</li>`    
+    }
+    
 }
 
 function sortearAmigo(){
