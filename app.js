@@ -14,6 +14,7 @@
 let listadoAmigos = [];
 let input ="";
 let listadoHTML = document.getElementById('listaAmigos');
+let respuestaHTML = document.getElementById('resultado');
 
 function validarInput(){
     input = document.getElementById('amigo').value;
@@ -52,5 +53,14 @@ function agregarListado(amigos = []){
 }
 
 function sortearAmigo(){
-
+    //valida que el array no este vacio
+    if(listadoAmigos.length === 0){
+        console.log("Esta vacio: ");
+    }else{
+        //sortear algun amigo aleatorio
+        let numAmigo = Math.floor(Math.random()*listadoAmigos.length-1)+1;
+        respuestaHTML.innerHTML = `<li> ${listadoAmigos[numAmigo]}</li>`
+        console.log(numAmigo);
+        console.log(listadoAmigos[numAmigo]);
+    }
 }
