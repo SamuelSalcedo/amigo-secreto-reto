@@ -4,8 +4,9 @@
     --color-tertiary: #C4C4C4;
     --color-button: #fe652b;
     --color-button-hover: #e55720;
-    --color-text: #444444;
+    --color-text: #001055;
     --color-white: #FFFFFF;
+    --color-list: #a8c2bc;
 }
 
 /* Estilos generales */
@@ -32,24 +33,56 @@ body {
 
 /* Banner */
 .header-banner {
-    flex: 40%;
+    flex: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0 0;
+    padding: 30px 0 0;
+}
+
+
+/*TODO EL CONTENIDO*/
+.main-content-input{
+    display: flex;
+    flex-direction: row;
 }
 
 /* Sección de entrada */
 .input-section {
-    flex: 60%;
+    flex: 30%;
     background-color: var(--color-secondary);
     border: 1px solid #000;
-    border-radius: 64px 64px 0 0;
+    border-radius: 64px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    width: 100%;
+    width: 500px;
+    justify-content: center;
+    margin: 10px;
+}
+
+/* Sección de respuesta */
+.input-result-list {
+    display: flex;
+    background-color: var(--color-secondary);
+    border: 1px solid #000;
+    border-radius: 64px;
+    align-items:center;
+    flex-direction: column;
+    padding: 20px;
+    width: 655px;
+    justify-content: center;
+    margin: 5px;
+}
+
+.result-game{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
+
+    padding: 15px;
 }
 
 /* Títulos */
@@ -61,6 +94,21 @@ body {
     color: var(--color-white);
 }
 
+.content-header{
+    display: flex;
+    background-color: #ec4e71;
+    border-style:solid;
+    border-color: #790707;
+    border-radius: 65px;
+    padding: 15px;
+    margin: 25px 100px 15px 100px; 
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:var(--color-secondary);
+}
+
 .section-title {
     font-family: "Inter", serif;
     font-size: 36px;
@@ -68,6 +116,8 @@ body {
     color: var(--color-primary);
     margin: 10px 0;
     text-align: center;
+    border-radius: 5%;
+    border-color: #0e0b0b;
 }
 
 /* Contenedores de entrada y botón */
@@ -89,7 +139,7 @@ body {
 
 .button-container {
     width: 300px;
-    justify-content: center;
+    margin: 20px;
 }
 
 /* Estilos de entrada de texto */
@@ -127,19 +177,51 @@ button {
 
 /* Listas */
 ul {
-    list-style-type: none;
+    list-style-type:none;
     color: var(--color-text);
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
     margin: 20px 0;
+}
+li{
+    border-radius: 10px;
+    padding: 5px;
+    border-style:ridge;
+    text-align: center;
+    border-color: var(--color-text);
+    background-color:aliceblue;
+    margin: 5px;
+}
+.name-list{
+    padding: 20px;
+    background-color:var(--color-list);
+    width: 450px;
+    align-content: center;
+    border-radius: 15px;
+    border-color: #001055;
+}
+
+/*SECCION EXCLUSIVA DE RESULTADOS*/
+.section-results{
+    display: flex;
+    background-color: var(--color-secondary);
+    border: 1px solid #000;
+    border-radius: 64px;
+    align-items:center;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    margin: 5px 25% 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .result-list {
-    margin-top: 15px;
+    margin-top: 25px;
     color: #05DF05;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: bold;
     text-align: center;
+    padding: 15px;
 }
 
 /* Botón de sortear título */
@@ -159,4 +241,9 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+.footer-draw{
+    display: flex;
+    text-align: center;
 }
