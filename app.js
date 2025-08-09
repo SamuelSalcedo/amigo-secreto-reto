@@ -42,7 +42,7 @@ function agregarAmigo(){
         listadoAmigos.push(input);
         limpiarInput();
         agregarListado(listadoAmigos)
-        console.log(listadoAmigos)
+        //console.log(listadoAmigos)
     }else{
         limpiarInput();
     }
@@ -64,8 +64,8 @@ function sortearAmigo(){
         //sortear algun amigo aleatorio
         let numAmigo = sortearAleatorio();
         respuestaHTML.innerHTML = `<li> ${listadoAmigos[numAmigo]}</li>`
-        console.log(numAmigo);
-        console.log(listadoAmigos[numAmigo]);
+        //console.log(numAmigo);
+        //console.log(listadoAmigos[numAmigo]);
     }
 }
 
@@ -75,7 +75,7 @@ function formarParejas(){
     if(listadoAmigos.length === 0){
         mostrarAlerta('La lista esta vacia ingrese un nombre');
 
-    }else{
+    }else{ 
         //formar parejas 
         //Ver si el arreglo es par o impar si es par se deja
         //si es impar se hace push al arreglo 'sin pareja'
