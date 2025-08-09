@@ -39,13 +39,13 @@
                             
                     <input type="text" id="amigo" class="input-name" placeholder="Escribe un nombre">
                             
-                    <button class="button-add" onclick="agregarAmigo()">Añadir</button>
+                    <button id="button-add" class="button-add" onclick="agregarAmigo()">Añadir</button>
                     
                 </div>
                                                     
                 <div class="button-container">
                             
-                    <button class="button-draw" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
+                    <button id="button-sort" class="button-draw" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
                             
                         <img src="assets/play_circle_outline.png" alt="Ícono para sortear">
                             
@@ -53,7 +53,7 @@
                             
                     </button>
                     
-                    <button class="button-draw" onclick="formarParejas()" aria-label="Formar Parejas">
+                    <button id="button-couples" class="button-draw" onclick="formarParejas()" aria-label="Formar Parejas">
                             
                         <img src="assets/play_circle_outline.png" alt="Ícono para sortear">
                             
@@ -61,6 +61,13 @@
                             
                     </button>
                     
+                    <button id="button-reset" class="button-draw" onclick="reiniciarJuego()" aria-label="Formar Parejas">
+                            
+                        <img src="assets/play_circle_outline.png" alt="Ícono para sortear">
+                            
+                        Reiniciar el Juego
+                            
+                    </button>
                 </div>
 
             </div>
