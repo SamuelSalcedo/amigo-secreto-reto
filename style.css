@@ -47,6 +47,44 @@ body {
     flex-direction: row;
 }
 
+
+/*SECCION DE LA NOTIFICACION PERSONALIZADA*/
+#custom-alert-container{
+    /*Contenido total*/
+    position: fixed;
+    top: 0px;
+    width: 350px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(3, 10, 80, 0.8); /* Dark semi-transparent background */
+    color:bisque;
+    margin: 5%;
+    /*PARA QUE SE posicione hasta arriba*/
+    z-index: 1000; 
+
+    /*para el texto*/
+    font-family: Impac1t, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: xx-large;
+    text-align: center;
+    padding: 25px;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+
+
+    /*Contenedor principal*/
+    border-radius: 15px;
+    border-color: #001055;
+    border: 1px solid #000;
+
+}
+
+.hidden{
+    display:none !important;
+}
+
+
 /* Sección de entrada */
 .input-section {
     flex: 30%;
@@ -70,10 +108,11 @@ body {
     border-radius: 64px;
     align-items:center;
     flex-direction: column;
-    padding: 20px;
+    padding: 30px;
     width: 655px;
     justify-content: center;
     margin: 5px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .result-game{
@@ -163,6 +202,7 @@ button {
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    margin: 8px;
 }
 
 .button-add {
@@ -185,7 +225,7 @@ ul {
 }
 li{
     border-radius: 10px;
-    padding: 5px;
+    padding: 15px;
     border-style:ridge;
     text-align: center;
     border-color: var(--color-text);
@@ -221,7 +261,8 @@ li{
     font-size: 28px;
     font-weight: bold;
     text-align: center;
-    padding: 15px;
+    padding: 25px;
+    align-content: center;
 }
 
 /* Botón de sortear título */

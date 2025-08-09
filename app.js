@@ -18,11 +18,13 @@ let respuestaHTML = document.getElementById('resultado');
 
 function validarInput(){
     input = document.getElementById('amigo').value;
-    if(input == ""){
-        alert("Por favor, inserte un nombre.");
+    if(input === ""){
+        
+        mostrarAlerta('Por favor, inserte un nombre.');
+
         return false
     }else{
-        console.log(input);
+        //console.log(input);
         return true
     }
 }
@@ -55,7 +57,7 @@ function agregarListado(amigos = []){
 function sortearAmigo(){
     //valida que el array no este vacio
     if(listadoAmigos.length === 0){
-        console.log("Esta vacio: ");
+        mostrarAlerta('La lista esta vacia ingrese un nombre');
     }else{
         //sortear algun amigo aleatorio
         let numAmigo = Math.floor(Math.random()*listadoAmigos.length-1)+1;
@@ -63,4 +65,19 @@ function sortearAmigo(){
         console.log(numAmigo);
         console.log(listadoAmigos[numAmigo]);
     }
+}
+
+
+//Funcion para mostrar la alerta personalizada
+function mostrarAlerta(mensaje){
+    const contenedorAlerta = document.getElementById('custom-alert-container');
+    const mensajeAlerta = document.getElementById('custom-alert-message');
+    const botonContenedor = document.getElementById('custom-alert-button');
+
+    mensajeAlerta.textContent = mensaje;
+    contenedorAlerta.classList.remove('hidden');
+
+    botonContenedor.onclick = function(){
+        contenedorAlerta.classList.add('hidden');
+    };
 }
