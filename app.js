@@ -18,16 +18,23 @@ let respuestaHTML = document.getElementById('resultado');
 let botonParejas = document.getElementById("button-couples");
 let botonAdd = document.getElementById('button-add');
 let botonsorteo = document.getElementById('button-sort');
+//VALIDACION de solo letras 
+const regex = /^[a-zA-Z\s-.]+$/;
+
 function validarInput(){
     input = document.getElementById('amigo').value;
     if(input === ""){
         
         mostrarAlerta('Por favor, inserte un nombre.');
-
+        
         return false
+    }if(!(regex.test(input))){
+        
+        mostrarAlerta('Por favor, Solo Ingrese letras.');
+        return false
+
     }else{
-        //console.log(input);
-        return true
+        return true;
     }
 }
 

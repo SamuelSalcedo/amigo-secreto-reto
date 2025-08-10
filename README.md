@@ -20,9 +20,9 @@ Dasafio para poner a prueba las habilidades de JS y github de los curso de Alura
 ## :wrench: Novedades ! :wrench:
 - `Boton de parejas:` Con este boton puedes hacer con el listado de tus amigos
 
--`Boton reiniciar:` Con este boton reinicias el listado y se activan los botones de nuevo
+- `Boton reiniciar:` Con este boton reinicias el listado y se activan los botones de nuevo
 
--`Funcion nueva:` cada vez que usas un boton tienes que reiniciar el juego antes de usar otro
+- `Funcion nueva:` cada vez que usas un boton tienes que reiniciar el juego antes de usar otro
 
 <h4 align="center">
     :construction_worker: Proyecto Terminado, pero se aceptan sugerencias :construction_worker:
