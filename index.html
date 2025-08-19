@@ -12,6 +12,11 @@
 
 <body>
 
+    <header class="header__style">
+            <nav class="header__menu">
+                <a class="header__menu__link" href="https://www.linkedin.com/in/samuel-salcedo-lucero-8a26041b8/">SOBRE EL DESARROLLADOR</a>
+            </nav>
+    </header>
     <!--DIV PARA CREAR UNA ALERTA PERSONALIZADA-->
     <div  id="custom-alert-container" class="hidden">
         <p id="custom-alert-message"></p>
@@ -27,7 +32,7 @@
         </header>
 
             <div class="content-header">
-                <p>Ingresa el nombre de tu amigo y realiza un tipo de sorteo</p>
+                <p><h1>Ingresa el nombre de tu amigo y realiza un tipo de sorteo</h1></p>
             </div>
 
         <section class="main-content-input">
@@ -37,7 +42,7 @@
                             
                 <div class="input-wrapper">
                             
-                    <input type="text" id="amigo" class="input-name" placeholder="Escribe un nombre">
+                    <input type="text" id="amigo" class="input-name" onblur="this.focus()" autofocus placeholder="Escribe un nombre">
                             
                     <button id="button-add" class="button-add" onclick="agregarAmigo()">Añadir</button>
                     
@@ -73,7 +78,7 @@
             </div>
             
             <div class="input-result-list">
-                <p>LISTADO DE AMIGOS:</p>
+                <p><h1> DE AMIGOS</h1></p>
                 <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul>
             </div>
         </section>

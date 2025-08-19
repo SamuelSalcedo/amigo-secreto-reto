@@ -1,12 +1,14 @@
 :root {
-    --color-primary: #ee74b1;
+    --color-primary: #a681eb;
     --color-secondary: #FFF9EB;
     --color-tertiary: #e2bbbb;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
+    --color-button: #ab5ddf;
+    --color-button-hover: #53349b;
     --color-text: #001055;
     --color-white: #FFFFFF;
     --color-list: #a8c2bc;
+    --background-list: #f7f5a6;
+
 }
 
 /* Estilos generales */
@@ -24,6 +26,38 @@ body {
     align-items: center;
 }
 
+.header__style{
+    border-style:solid;
+    border-radius: 5px;
+    padding: 25px;
+    position:fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(93, 52, 204, 0.39);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.7px);
+    -webkit-backdrop-filter: blur(8.7px);
+    border: 1px solid rgba(73, 60, 252, 0.41);
+}
+.header__menu__link{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    font-size: x-large;
+    margin: 20px;
+    padding: 8px;
+    text-decoration: none;
+    text-emphasis: none;
+    border-radius: 10px;
+    box-shadow: 0 6px 30px var(--color-primary);
+
+}
+
+.header__menu__link:hover{
+    box-shadow: 0 4px 30px var(--color-secondary);
+    padding: 15px;
+}
 .main-content {
     display: flex;
     flex-direction: column;
@@ -53,11 +87,11 @@ body {
     /*Contenido total*/
     position: fixed;
     top: 0px;
-    width: 350px;
-    height: 250px;
+    width: 400px;
+    height: 300px;
     display: flex;
     flex-direction: column;
-    background-color: rgba(3, 10, 80, 0.9); /* Dark semi-transparent background */
+    background-color: rgba(22, 38, 209, 0.705); /* Dark semi-transparent background */
     color:bisque;
     margin: 5%;
     /*PARA QUE SE posicione hasta arriba*/
@@ -75,9 +109,12 @@ body {
 
     /*Contenedor principal*/
     border-radius: 15px;
-    border-color: #001055;
-    border: 1px solid #000;
+    border-color: var(--color-text);
 
+    box-shadow: 0 10px 25px rgba(24, 1, 39, 0.829);
+    backdrop-filter: blur(8.7px);
+    -webkit-backdrop-filter: blur(8.7px);
+    border: 1px solid rgba(150, 142, 252, 0.836);
 }
 
 .hidden{
@@ -85,7 +122,7 @@ body {
 }
 
 .photo-friends{
-    border:#001055;
+    border: var(--color-button);
     border-radius: 15px;
     margin: 35px;
 }
@@ -131,7 +168,7 @@ body {
 
 /* Títulos */
 .main-title {
-    font-size: 48px;
+    font-size: 65px;
     font-family: "Merriweather", serif;
     font-weight: 900;
     font-style: italic;
@@ -140,9 +177,9 @@ body {
 
 .content-header{
     display: flex;
-    background-color: #ec4e71;
+    background-color: var(--color-button-hover);
     border-style:solid;
-    border-color: #790707;
+    border-color: var(--color-button);
     border-radius: 65px;
     padding: 15px;
     margin: 25px 100px 15px 100px; 
@@ -211,15 +248,20 @@ button {
 }
 
 .button-add {
-    background-color: var(--color-tertiary);
-    color: var(--color-text);
+    background-color: var(--color-button);
+    color: var(--color-white);
     border-radius: 0 25px 25px 0;
 }
 
 .button-add:hover {
-    background-color: #a1a1a1;
+    background-color:var(--color-button-hover   );
 }
 
+
+button:disabled{
+    background-color: var(--color-button-hover);
+    cursor: not-allowed;
+}
 /* Listas */
 ul {
     list-style-type:none;
@@ -229,12 +271,13 @@ ul {
     margin: 20px 0;
 }
 li{
+    font-size: larger;
     border-radius: 10px;
     padding: 15px;
     border-style:ridge;
     text-align: center;
     border-color: var(--color-text);
-    background-color:aliceblue;
+    background-color: var(--background-list);
     margin: 5px;
 }
 .name-list{
@@ -262,7 +305,7 @@ li{
 
 .result-list {
     margin-top: 25px;
-    color: #05DF05;
+    color: var(--color-primary);
     font-size: 28px;
     font-weight: bold;
     text-align: center;
