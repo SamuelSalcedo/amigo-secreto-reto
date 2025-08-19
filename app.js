@@ -18,6 +18,9 @@ let respuestaHTML = document.getElementById('resultado');
 let botonParejas = document.getElementById("button-couples");
 let botonAdd = document.getElementById('button-add');
 let botonsorteo = document.getElementById('button-sort');
+
+//Longitud como una variable para el fisher - yates y realmente no afecta (creo)
+
 //VALIDACION de solo letras 
 const regex = /^[a-zA-Z\s-.]+$/;
 
@@ -48,22 +51,20 @@ function agregarAmigo(){
     if(validarInput()){
         listadoAmigos.push(input);
         limpiarInput();
-        agregarListado(listadoAmigos)
-        //console.log(listadoAmigos)
+        listadoHTML.innerHTML = ""
+        
+        for(var i =0;i<listadoAmigos.length;i++){
+            listadoHTML.innerHTML += `<li>${listadoAmigos[i]}</li>`    
+        }
+                //console.log(listadoAmigos)
     }else{
         limpiarInput();
     }
 }
 
-function agregarListado(amigos = []){
-    listadoHTML.innerHTML = ""
-    for(var i =0;i<amigos.length;i++){
-        listadoHTML.innerHTML += `<li>${amigos[i]}</li>`    
-    }
-    
-}
 
 function sortearAmigo(){
+    respuestaHTML.innerHTML = ""
     //valida que el array no este vacio
     if(listadoAmigos.length === 0){
         mostrarAlerta('La lista esta vacia ingrese un nombre');
@@ -83,42 +84,40 @@ function formarParejas(){
         mostrarAlerta('La lista esta vacia ingrese un nombre');
 
     }else{ 
+        /*
         //formar parejas 
         //Ver si el arreglo es par o impar si es par se deja
         //si es impar se hace push al arreglo 'sin pareja'
+                //ANTIGUA LOGICA:
         //tomar numeros aleatorios del arreglo que no se repiten:
             //si  el num2 es igual del num1 saca otro 
             //agrega los elementos a un nueov arreglo para verficar que se sorteen todos
             //agrega al listado y num 1 y num 2 se vacian
             
             //haz esto while hasta que el nuevo arreglo sea igual al inicial
+        */
         if(listadoAmigos.length%2 != 0){
             //es par no se hace nada
             listadoAmigos.push('Sin pareja');
-        }    
-        let nuevaLista = [];
+        }
+        
+        //fisher - yates para un barajear todo el arreglo
         let numAmigo = 0;
-        let numAmigo2= 0;
 
-        while(nuevaLista.length != listadoAmigos.length){
-            
-            //mientras que sea el mismo saca otro
-            while(numAmigo2 == numAmigo || (nuevaLista.includes(numAmigo) || (nuevaLista.includes(numAmigo2)))){
-                numAmigo2 = sortearAleatorio();
-                //tomar un numero aleatorio
-                numAmigo = sortearAleatorio();
-                
-            }
+        //recorrer el arreglo y restar en 1 cada vez que se complete 
+        for (let i = listadoAmigos.length-1; i > 0; i--) {
+            //tomar uno aleatorio
+            numAmigo = sortearAleatorio();
+            //INTERCAMBIO NUEVO (tomas 2 elementos y intercambias lugares)
+            [listadoAmigos[i], listadoAmigos[numAmigo]] = [listadoAmigos[numAmigo], listadoAmigos[i]];
+        }
 
-            //console.log(numAmigo);
-            //console.log(numAmigo2);
-            
-            nuevaLista.push(numAmigo,numAmigo2);
-
-            respuestaHTML.innerHTML += `<li> ${listadoAmigos[numAmigo]} - ${listadoAmigos[numAmigo2]} </li>`
-           // console.log("Nueva lista: " + nuevaLista);
-            numAmigo = 0;
-            numAmigo2 = 0;
+        //Para rellenar el listado
+        //recorre el arreglo de 2 en 2 
+        for (let i = 0;i< listadoAmigos.length;i+=2) {
+            let amigo1 = listadoAmigos[i];
+            let amigo2 = listadoAmigos[i+1]
+            respuestaHTML.innerHTML += `<li>${amigo1} - ${amigo2}</li>`        
         }
         botonParejas.disabled = true;
         botonAdd.disabled = true;        

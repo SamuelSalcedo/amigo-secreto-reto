@@ -84,6 +84,11 @@ body {
     display:none !important;
 }
 
+.photo-friends{
+    border:#001055;
+    border-radius: 15px;
+    margin: 35px;
+}
 
 /* Sección de entrada */
 .input-section {
